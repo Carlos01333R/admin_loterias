@@ -82,7 +82,7 @@ export default function Ticket() {
                       <p>{boleto.numero}</p>
                     </div>
                     <div className="flex flex-col">
-                      <p>{boleto.conbi === "" ? "SUPER" : "COMBINADO SUPER"}</p>
+                      <p>Cifras: {boleto.longitudNumero}</p>
                     </div>
                     <div className="flex flex-col">
                       <p>{formatCurrency(boleto.valor)}</p>

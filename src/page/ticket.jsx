@@ -88,7 +88,7 @@ export default function Ticket() {
                 ))}
               </div>
               <div className="flex flex-col justify-center items-center mt-4">
-                <p className="font-bold text-2xl underline">Valor </p>
+                <p className="font-bold text-2xl underline">TOTAL </p>
                 <p className="font-bold text-xl mb-1">
                   <p className="bg-[#027AFD] py-2 px-4 text-white rounded-lg mt-2">
                     {formatCurrency(venta.valor_bruta)} cop

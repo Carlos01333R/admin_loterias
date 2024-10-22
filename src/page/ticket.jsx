@@ -23,7 +23,7 @@ export default function Ticket() {
   return (
     <>
       <section>{loading ? <p>Cargando...</p> : null}</section>
-      <section className="w-[90%] mt-10 md:max-w-[500px]  flex  items-center m-auto bg-white text-black rounded-xl p-3 shadow-md">
+      <section className="w-[90%] mt-10 md:max-w-[500px]  flex  items-center m-auto bg-white text-black rounded-xl p-3 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]">
         {ventas && ventas.length > 0 ? (
           ventas.map((venta, index) => (
             <div key={index} className="w-full">
@@ -32,7 +32,7 @@ export default function Ticket() {
               </h1>
               <div className="flex justify-between items-center ">
                 <p className="font-bold">Ticket </p>
-                <p className="font-bold bg-yellow-300 py-1 px-3 rounded-xl">
+                <p className="font-bold bg-[#027AFD] py-1 px-3 rounded-xl text-white">
                   #{venta.numero_venta}
                 </p>
               </div>
@@ -52,17 +52,14 @@ export default function Ticket() {
                 <p className="font-bold">Tipo de juego </p>
                 <p className="font-bold text-xl">{venta.juego}</p>
               </div>
-              <div className="flex justify-between items-center mt-3">
-                <p className="font-bold">Valor </p>
-                <p className="font-bold text-xl">
-                  <p>{formatCurrency(venta.valor_bruta)} cop</p>
-                </p>
-              </div>
-              <p className="font-bold mt-3 text-center ">loterias </p>
+
+              <p className="font-bold mt-3 text-center underline ">loterias </p>
               <div className="flex flex-row  justify-center  mt-3 m-auto  items-center flex-wrap gap-2 md:gap-0">
                 {venta.loterias.map((loteria, index) => (
-                  <section key={index} className="flex flex-col  ">
-                    <p className="bg-yellow-300 rounded-xl px-2 ">{loteria}</p>
+                  <section key={index} className="flex flex-col ">
+                    <p className="bg-[#027AFD] rounded-xl p-2 text-white">
+                      {loteria}
+                    </p>
                   </section>
                 ))}
               </div>
@@ -76,7 +73,7 @@ export default function Ticket() {
                 {venta.boletos.map((boleto, index) => (
                   <section
                     key={index}
-                    className="flex justify-between items-center w-[95%]m-auto"
+                    className="flex justify-between items-center w-[95%] m-auto"
                   >
                     <div className="flex flex-col">
                       <p>{boleto.numero}</p>
@@ -89,6 +86,14 @@ export default function Ticket() {
                     </div>
                   </section>
                 ))}
+              </div>
+              <div className="flex flex-col justify-center items-center mt-4">
+                <p className="font-bold text-2xl underline">Valor </p>
+                <p className="font-bold text-xl mb-1">
+                  <p className="bg-[#027AFD] py-2 px-4 text-white rounded-lg mt-2">
+                    {formatCurrency(venta.valor_bruta)} cop
+                  </p>
+                </p>
               </div>
               <section className="w-full flex justify-center items-center mt-5">
                 <button

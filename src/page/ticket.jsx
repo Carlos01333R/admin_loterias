@@ -68,6 +68,7 @@ export default function Ticket() {
                   <p>Numero</p>
                   <p>Modalidad</p>
                   <p>$Valor</p>
+                  <p>$combi</p>
                 </article>
 
                 {venta.boletos.map((boleto, index) => (
@@ -83,6 +84,10 @@ export default function Ticket() {
                     </div>
                     <div className="flex flex-col">
                       <p>{formatCurrency(boleto.valor)}</p>
+                    </div>
+
+                    <div className="flex flex-col">
+                      <p>{formatCurrency(boleto.conbi)}</p>
                     </div>
                   </section>
                 ))}
